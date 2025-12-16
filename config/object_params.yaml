@@ -1,0 +1,35 @@
+# ur5_pick_and_place/config/object_params.yaml
+
+color_ranges:
+  red:
+    lower: [0, 100, 100]  # Exemplo de limite inferior HSV para vermelho
+    upper: [10, 255, 255] # Exemplo de limite superior HSV para vermelho
+    # Pode ser necessário um segundo intervalo para o vermelho, pois ele "abraça" 0 e 180 no matiz
+    lower2: [170, 100, 100]
+    upper2: [180, 255, 255]
+  green:
+    lower: [40, 100, 100] # Exemplo de limite inferior HSV para verde
+    upper: [80, 255, 255] # Exemplo de limite superior HSV para verde
+  blue:
+    lower: [100, 100, 100] # Exemplo de limite inferior HSV para azul
+    upper: [140, 255, 255] # Exemplo de limite superior HSV para azul
+
+box_positions:
+  red:
+    x: -0.8  # Posição X da caixa vermelha (em metros, relativo ao frame base do robô)
+    y: -0.259524  # Posição Y da caixa vermelha
+    z: 1.025 # Posição Z da caixa vermelha (altura da caixa)
+  green:
+    x: -0.8
+    y: -0.009524
+    z: 1.025
+  blue:
+    x: -0.8
+    y: 0.240476
+    z: 1.025
+
+# Offset do gripper para pegar o objeto (ajuste conforme o seu gripper e o tamanho dos blocos)
+gripper_offset_z: 0.08 # Quanto o gripper deve descer abaixo do centro do bloco para pegar
+
+# Posição de segurança (home ou acima da mesa)
+safe_approach_z_offset: 0.1 # Distância acima do objeto/caixa para abordagem/recuo

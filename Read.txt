@@ -1,0 +1,140 @@
+Manual para simulação (Campos Potenciais Artificiais)
+
+a1) Abrir o Gazebo junto com o Moveit/Rviz "SEM a garra"
+--> roslaunch trajectory_pkg spawn_ur5_eff_controller.launch
+
+a2) Abrir o Gazebo junto com o Moveit/Rviz "COM a garra"
+--> roslaunch trajectory_pkg spawn_ur5_gripper.launch
+
+a3) Abrir o Gazebo junto com o Moveit/Rviz "COM a garra" e a câmera intel Realsense d435
+--> roslaunch trajectory_pkg spawn_ur5_gripper_cam.launch
+
+b) Posicionar o robô na posição inicial
+--> rosrun trajectory_pkg pos_initial.py
+
+c) Inserir os obstáculos no Gazebo
+--> rosrun trajectory_pkg spawn_spheres.py
+
+d) Remover obstáculos no Gazebo
+--> rosrun trajectory_pkg remove_spheres_gazebo.py     
+
+e) Movimentar o robô entre duas posições utilizando o Rviz 
+--> rosrun trajectory_pkg analisador.py
+
+f) Planejamento de trajetória do robô com o algoritmo de "Campos Potenciais Artificiais Tradicional"
+--> rosrun trajectory_pkg cpa_basic.py
+
+g) Planejamento de trajetória do robô com o algoritmo de "Campos Potenciais Artificiais Tradicional"
+--> rosrun trajectory_pkg cpa_basic2.py
+
+h) Planejamento de trajetória do robô com o algoritmo de "Campos Potenciais Artificiais Adaptativos"
+--> rosrun trajectory_pkg cpa_basic3.py
+
+i) Verificar a posição do robô no espaço cartesiano
+--> rosrun tf tf_echo /base_link /tool0
+
+j) Adicionar obstáculos no Moveit
+--> rosrun trajectory_pkg obstaculos.py
+
+l) Excluir obstáculos no Moveit
+--> rosrun trajectory_pkg remove_spheres.py
+
+*************************************************************************************
+
+Distância dos obstáculos:
+Obs: No script " spawn_spheres.py" para inserir os obstáculos é necessário adicionar a elevação do robô "1.015 m"
+     Nos scripts de cpa pode-se colocar da forma que está anotado abaixo.
+
+1 - Para goal position: [-0.488, 0.191, 0.510]
+a) teste 1: [-0.2, -0.1915, 0.75], [-0.3, 0.191, 0.65]
+b) teste 2: [-0.2, 0.0, 0.75], [-0.2, 0.191, 0.65] # Para estes obstáculos o robô não conseguiu passar os obstáculos
+c) teste 3: [-0.4, 0.0, 0.75], [-0.4, 0.191, 0.65] #
+
+2 - Para goal position: [-0.488, 0.191, 0.510]
+
+
+
+
+
+
+**********************************************************************************************
+Projeto final do semestre (Preensão método analítico)
+
+a) Abrir o Gazebo junto com o Moveit/Rviz "COM a garra" e a câmera intel Realsense d435
+ roslaunch trajectory_pkg spawn_ur5_gripper_cam.launch
+
+b)Para visualizar a imagem da câmera
+ rosrun image_view image_view image:=/camera/color/image_raw
+ou
+ rqt_image_view
+
+c) Lançar os blocos e caixas no mundo
+ rosrun trajectory_pkg spawn_objects_model.py
+
+d) Ler a pose no espaço cartesiano
+ rosrun tf tf_echo base_link tool0
+
+e) Ler a variável das juntas, velocidade e força
+ rostopic echo /ur5/joint_states
+
+f) Iniciar tarefa de pegar blocos
+ rosrun trajectory_pkg grasp_main.py
+
+g) Posicionar o robô na posição inicial
+ rosrun trajectory_pkg init_position.py
+
+h) Posição de preensão
+ rosrun trajectory_pkg position_grip.py
+
+
+
+**********************************************************************************************
+
+Prenssão utilizando ggcnn e imagem de profundidade
+
+a) Abrir o Gazebo junto com o Moveit/Rviz "COM a garra" e a câmera intel Realsense d435
+ roslaunch ggcnn_pkg spawn_ur5_gripper_cam.launch
+
+b)Para visualizar a imagem da câmera
+ rosrun image_view image_view image:=/camera/color/image_raw
+ou
+ rqt_image_view
+
+c) Lançar os objetos no mundo
+rosrun ggcnn_pkg spawn_objects.py
+
+d) Ler a pose no espaço cartesiano
+ rosrun tf tf_echo base_link tool0
+
+e) Ler a variável das juntas, velocidade e força
+ rostopic echo /ur5/joint_states
+
+f) Posicionar o robô na posição inicial
+ rosrun ggcnn_pkg init_position.py
+
+g) Posição de preensão
+ rosrun ggcnn_pkg position_grip.py
+
+h) Iniciar a tarefa de rodar o ggcnn + rodar a preensão robótica (tudo junto)
+ rosrun ggcnn_pkg grasp_node.py
+
+i) Nó para rodar somente a rede ggcnn
+ rosrun ggcnn_pkg ggcnn_node.py
+
+j) Nó para rodar somente a preensão robótica
+ rosrun ggcnn_pkg grasp_execution_node.py
+
+k) Lançar frames estáticos no RViz
+ rosrun tf2_ros static_transform_publisher 0 0 0 0 0 0 base_link point_1  # x y z Roll Pitch Yaw
+
+l) Visualizar a imagem da câmera
+rqt_image_view /ggcnn/grasp_visual
+
+PARA SIMULAÇÃO COMPLETA:
+roslaunch ggcnn_pkg spawn_ur5_gripper_cam.launch
+rosrun ggcnn_pkg spawn_objects.py
+rosrun image_view image_view image:=/camera/color/image_raw
+rosrun image_view image_view image:=/ggcnn/img/depth
+rosrun ggcnn_pkg position_grip.py
+rosrun ggcnn_pkg run_ggcnn.py
+rosrun ggcnn_pkg grasp_node.py 

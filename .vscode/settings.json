@@ -1,0 +1,14 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/miguel/miguel_ws/devel/lib/python3/dist-packages",
+        "/home/miguel/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/miguel/miguel_ws/devel/lib/python3/dist-packages",
+        "/home/miguel/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "ros.distro": "noetic",
+    "github.copilot.chat.codeGeneration.useInstructionFiles": true
+}

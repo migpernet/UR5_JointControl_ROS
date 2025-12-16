@@ -1,0 +1,68 @@
+<launch>
+
+    <group ns="objetos">
+
+      <!-- add bico dosador -->
+      <!-- <node name="bico_dosador" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-file $(find ggcnn_pkg)/models/bico_dosador/model.sdf -sdf -model bico_dosador -x -0.05 -y -0.5 -z 0.872 -R 0.0 -P 0.0 -Y 0.0" /> -->
+
+      <!-- add part1 -->    
+      <!-- <node name="part1" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-file $(find ggcnn_pkg)/models/part1/model.sdf -sdf -model part1 -x -0.09 -y -0.47 -z 0.872 -R 0.0 -P 0.0 -Y 0.0" /> -->
+
+      <!-- add part2 -->    
+      <!-- <node name="part2" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-file $(find ggcnn_pkg)/models/part2/model.sdf -sdf -model part2 -x -0.043 -y -0.46 -z 0.872 -R 0.0 -P 0.0 -Y -1.57" /> -->
+
+      <!-- add unob_1 -->    
+      <!-- <node name="unob_1" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-file $(find ggcnn_pkg)/models/unob_1/model.sdf -sdf -model unob_1 -x -0.058 -y -0.41 -z 0.872 -R 0.0 -P 0.0 -Y 0.0" /> -->
+
+      <!-- add unob_2 -->    
+      <!-- <node name="unob_2" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-file $(find ggcnn_pkg)/models/unob_2/model.sdf -sdf -model unob_2 -x -0.13 -y -0.41 -z 0.872 -R 0.0 -P 0.0 -Y 0.0" /> -->
+
+      <!-- add unob_3 -->    
+      <!-- <node name="unob_3" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-file $(find ggcnn_pkg)/models/unob_3/model.sdf -sdf -model unob_3 -x -0.141 -y -0.45 -z 0.872 -R 0.0 -P 0.0 -Y 0.0" /> -->
+
+      <!-- add little_bin_box -->    
+      <!-- <node name="little_bin_box" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-file $(find ggcnn_pkg)/models/little_bin_box/model.sdf -sdf -model little_bin_box -x 0.16 -y -0.45 -z 0.872 -R 0.0 -P 0.0 -Y 0.0" /> -->
+
+        <!-- add great_bin_box -->    
+      <!-- <node name="great_bin_box" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-file $(find ggcnn_pkg)/models/great_bin_box/model.sdf -sdf -model great_bin_box -x 0.241 -y -0.45 -z 0.872 -R 0.0 -P 0.0 -Y 0.0" /> -->
+
+      <!-- ******************************************************************************* -->
+
+          <!-- add bico dosador -->
+      <node name="bico_dosador" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-file $(find ggcnn_pkg)/models/bico_dosador/model.sdf -sdf -model bico_dosador -x -0.5 -y 0.05 -z 0.872 -R 0.0 -P 0.0 -Y 0.0" />
+
+      <!-- add part1 -->    
+      <node name="part1" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-file $(find ggcnn_pkg)/models/part1/model.sdf -sdf -model part1 -x -0.47 -y 0.09 -z 0.872 -R 0.0 -P 0.0 -Y 0.0" />
+
+      <!-- add part2 -->    
+      <node name="part2" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-file $(find ggcnn_pkg)/models/part2/model.sdf -sdf -model part2 -x -0.46 -y 0.043 -z 0.872 -R 0.0 -P 0.0 -Y 0.0" />
+
+      <!-- add unob_1 -->    
+      <node name="unob_1" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-file $(find ggcnn_pkg)/models/unob_1/model.sdf -sdf -model unob_1 -x -0.41 -y 0.058 -z 0.872 -R 0.0 -P 0.0 -Y 0.0" />
+
+      <!-- add unob_2 -->    
+      <node name="unob_2" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-file $(find ggcnn_pkg)/models/unob_2/model.sdf -sdf -model unob_2 -x -0.41 -y 0.13 -z 0.872 -R 0.0 -P 0.0 -Y 0.0" />
+
+      <!-- add unob_3 -->    
+      <node name="unob_3" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-file $(find ggcnn_pkg)/models/unob_3/model.sdf -sdf -model unob_3 -x -0.45 -y 0.141 -z 0.872 -R 0.0 -P 0.0 -Y -1.57" />
+
+      <!-- add little_bin_box -->    
+      <node name="little_bin_box" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-file $(find ggcnn_pkg)/models/little_bin_box/model.sdf -sdf -model little_bin_box -x -0.45 -y -0.16 -z 0.872 -R 0.0 -P 0.0 -Y 0.0" />
+
+    </group>
+</launch>

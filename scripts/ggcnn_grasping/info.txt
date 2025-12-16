@@ -1,0 +1,8 @@
+Nesta pasta "ggcnn_grasping" contêm o clone do github do ggcnn "https://github.com/dougsm/ggcnn/tree/master".
+
+Perceba que aqui exite a opção de treinar o modelo ou utilizar a versão pré-treinada da rede.
+
+
+No script "run_ggcnn" possui a versão de Caio em tensorflow, porém, além de estar apresentando alguns erros, percebi que a atualizalação do ggcnn está utilizando o pytorch.
+
+No script "run_ggcnn_2" possui a implementação em pytorch, tendo como base a versão do script de Caio.

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>ggcnn_pkg</name>
+  <name>UR5_JointControl_ROS</name>
   <version>0.0.0</version>
   <description>The trajectory_pkg package</description>
 

@@ -10,5 +10,6 @@
         "/opt/ros/noetic/lib/python3/dist-packages"
     ],
     "ros.distro": "noetic",
-    "github.copilot.chat.codeGeneration.useInstructionFiles": true
+    "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+    "ROS2.distro": "noetic"
 }

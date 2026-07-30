@@ -1,0 +1,16 @@
+Controle de versões:
+
+
+UR5_JointControl_VR_V4   (Versão base para o artigo do CBA2026)
+
+
+UR5_Teleoperation_VR_Hand   (Versão com a cerca com novas configuração, sem GGCNN) problema - ajustar
+
+
+******************************************************************************
+
+UR5_Teleoperation_VR_Hand_GGCNN  (Versão com implementação do GGCNN)
+
+
+UR5_Teleoperation_VR_Hand_PointClould  (Versão com implementação da nuvem de pontos sem GGCNN)
+

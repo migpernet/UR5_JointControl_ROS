@@ -1,0 +1,28 @@
+Guia de simulação:
+
+1 - Lançar a simulação no unity: 
+Nome do projeto --> UR5_JointControl_VR_V2    
+
+2 - Lançar o servidor via terminal
+roslaunch ros_tcp_endpoint endpoint.launch
+
+3 - Lançar o gazebo / RViz via terminal
+roslaunch ggcnn_pkg spawn_ur5_gripper_gazebo.launch
+
+4 - Lançar o nó no lado do ROS para receber os ângulos das juntas enviadas pelo Unity
+rosrun unity_ur5_control unity_joint_publisher.py
+
+5 - Conectar a webCam no computador Ubuntu
+
+6 - Lançar o nó no lado do ROS para transmitir informações da webCam externa
+rosrun usb_cam usb_cam_node _video_device:="/dev/video2" _pixel_format:=yuyv 
+
+7 - Iniciar a simulação no unity apertando o "play"
+
+8 - Verificar a criação dos tópicos e publicações com "rostopic"
+
+9 - Abrir o "rqt_graph" via terminal para visualizar os nós e tópicos publisher e subscriber.
+
+
+
+obs: https://www.youtube.com/watch?v=rfwHAYAUm_w	

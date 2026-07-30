@@ -1,7 +1,7 @@
 Guia de simulação:
 
 1 - Lançar a simulação no unity: 
-Nome do projeto --> UR5_JointControl_VR    
+Nome do projeto --> UR5_JointControl_VR_V2    
 
 2 - Lançar o servidor via terminal
 roslaunch ros_tcp_endpoint endpoint.launch

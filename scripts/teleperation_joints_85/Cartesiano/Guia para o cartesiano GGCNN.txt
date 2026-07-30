@@ -1,0 +1,41 @@
+Guia de simulação:
+
+1 - Lançar a simulação no unity: 
+Nome do projeto --> UR5_JointControl_VR_V4    
+
+2 - Lançar o servidor via terminal
+roslaunch ros_tcp_endpoint endpoint.launch
+
+3 - Lançar o gazebo / RViz via terminal
+roslaunch ggcnn_pkg spawn_ur5_gripper_140_cam.launch      ou     roslaunch ggcnn_pkg spawn_ur5_gripper_140_cam_gazebo.launch
+
+4 - Inserir objetos no gazebo
+rosrun ggcnn_pkg spawn_objects.py       ou        rosrun trajectory_pkg spawn_objects_model.py (blocos coloridos)
+
+5 - Rodar o script do GGCNN
+rosrun ggcnn_pkg run_ggcnn_teleoperation.py        ou        rosrun UR5_JointControl_ROS run_ggcnn_teleoperation.py
+
+6 - Lançar o nó no lado do ROS para receber a pose do "GhostCube" enviadas pelo Unity e resolver a cinemática inversa com o KDL/DLS
+rosrun UR5_JointControl_ROS kdl_teleop_solver_DLS_140.py
+
+7 - Rode o planejador de trajetórias (Polinômio quíntuplo)
+rosrun UR5_JointControl_ROS quintic_planner_node_140.py
+
+8 - Rode o nó responsável pelo comando das juntas do robô
+rosrun UR5_JointControl_ROS robot_commander_node_140.py
+
+9 - Conectar a webCam no computador Ubuntu
+
+10 - Lançar o nó no lado do ROS para transmitir informações da webCam externa
+rosrun usb_cam usb_cam_node _video_device:="/dev/video2" _pixel_format:=yuyv 
+
+11 - Iniciar a simulação no unity apertando o "play"
+
+12 - Verificar a criação dos tópicos e publicações com "rostopic"
+
+13 - Abrir o "rqt_graph" via terminal para visualizar os nós e tópicos publisher e subscriber.
+
+
+AUXILIARES:
+Par acalcular a latência:
+rosrun UR5_JointControl_ROS latency_echo.py
